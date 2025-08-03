@@ -1,3 +1,5 @@
+"""Übung 7: Verständnis des Viterbi-Algorithmus mit einem Spielzeugbeispiel."""
+
 import numpy as np
 
 if __name__ == "__main__":

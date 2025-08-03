@@ -1,28 +1,62 @@
 # import...
+"""Utility functions used throughout the speech recognizer.
+
+This module collects small helper routines that are required in multiple
+places within the project.  The majority of the functions deal with common
+signal‑processing tasks such as converting between time and sample indices or
+preparing training targets.  Keeping them in a separate file avoids code
+duplication and makes the individual exercises easier to read.
+"""
+
 import math
 import numpy as np
 from praatio import tgio
 
 def sec_to_samples(x, sampling_rate):
-    # TODO implement this method
-    return int ( math.ceil(x * sampling_rate) )
+    """Convert a duration in seconds to discrete samples.
+
+    The audio processing code works on sample indices.  This helper therefore
+    provides a convenient way to translate from real time (seconds) to the
+    corresponding number of samples for a given sampling rate.
+    """
+
+    return int(math.ceil(x * sampling_rate))
 
 
 def next_pow2(x):
-    # TODO implement this method
-    return math.ceil(math.log2(x))      # Using ceil function to round up to the next integer value
+    """Return the exponent of the next power of two for ``x``.
+
+    Many spectral algorithms such as the FFT operate most efficiently on
+    window sizes that are exact powers of two.  This function therefore helps
+    to determine an appropriate window length.
+    """
+
+    return math.ceil(math.log2(x))
 
 
 def next_pow2_samples(x, sampling_rate):
-    # TODO implement this method
+    """Convert seconds to samples and compute the next power of two.
+
+    It is often useful to know both the exact number of samples for a time
+    span as well as the FFT friendly power‑of‑two length.  This function
+    returns both values in one call.
+    """
+
     samples = sec_to_samples(x, sampling_rate)
-    return samples, next_pow2(samples)  # !DIF: return next_pow2(samples)
+    return samples, next_pow2(samples)
 
 
 
 def get_num_frames(signal_length_samples, window_size_samples, hop_size_samples):
-    overlap = window_size_samples-hop_size_samples
-    return int( math.ceil( (signal_length_samples-overlap)/hop_size_samples ) )
+    """Determine how many analysis frames fit into a signal.
+
+    Parameters correspond to the total number of samples in the signal and the
+    framing configuration.  The result is the number of frames produced when
+    using the given window and hop sizes.
+    """
+
+    overlap = window_size_samples - hop_size_samples
+    return int(math.ceil((signal_length_samples - overlap) / hop_size_samples))
 
 
 def sec_to_frame(x, sampling_rate, hop_size_samples):

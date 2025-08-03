@@ -1,3 +1,5 @@
+"""Testskript zur Berechnung der Word Error Rate über das Testset."""
+
 import recognizer.dnn_recognizer as rec
 import recognizer.hmm as HMM
 import recognizer.tools as tools

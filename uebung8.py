@@ -1,3 +1,5 @@
+"""Übung 8: Rückübersetzen einer Zustandsfolge in Wörter."""
+
 import recognizer.hmm as HMM
 import matplotlib.pyplot as plt
 import numpy as np

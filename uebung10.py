@@ -1,3 +1,5 @@
+"""Übung 10: Systematische Evaluation des Sprachsystems."""
+
 import recognizer.dnn_recognizer as rec
 import recognizer.hmm as HMM
 import recognizer.tools as tools

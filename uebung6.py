@@ -1,3 +1,5 @@
+"""Übung 6: Training eines DNN-Akustikmodells mit den extrahierten Merkmalen."""
+
 import recognizer.feature_extraction as fe
 import recognizer.dnn_recognizer as rec
 import recognizer.hmm as HMM

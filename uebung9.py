@@ -1,3 +1,5 @@
+"""Übung 9: End-to-End Erkennung einer Ziffernfolge."""
+
 import recognizer.dnn_recognizer as rec
 import recognizer.hmm as HMM
 from keras.models import load_model
