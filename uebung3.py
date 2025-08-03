@@ -1,3 +1,5 @@
+"""Übung 3: Aufbau einer Mel-Filterbank und FBANK-Visualisierung."""
+
 import math
 import numpy as np
 from scipy import signal

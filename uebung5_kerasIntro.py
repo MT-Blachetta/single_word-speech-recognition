@@ -1,3 +1,5 @@
+"""Übung 5: Einführung in Keras anhand des Fashion-MNIST Datensatzes."""
+
 from keras.datasets import fashion_mnist
 from keras.utils import np_utils
 import matplotlib.pyplot as plt

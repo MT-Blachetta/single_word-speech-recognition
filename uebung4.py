@@ -1,3 +1,5 @@
+"""Übung 4: Berechnung von MFCCs und deren Ableitungen."""
+
 import math
 import numpy as np
 from scipy import signal
